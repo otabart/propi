@@ -2,6 +2,8 @@
 
 Tokenize your properties in Guatemala, staying compliant with Registro de la Propiedad.
 
+🏠 Live at: https://propi.vercel.app
+
 ## Features
 
 - 🏠 **Property Tokenization**: Transform real estate into tradeable digital tokens
