@@ -32,7 +32,7 @@ const translations = {
         'Conecta tu billetera y comienza a invertir en bienes ra\u00edces de Guatemala o tokeniza tu propiedad.': 'Connect your wallet and start investing in Guatemala real estate or tokenize your property.',
         'CONECTAR BILLETERA / CONECTAR BILLETERA': 'CONNECT WALLET',
         'APRENDER M\u00c1S': 'LEARN MORE',
-        'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022  ': 'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022  ',
+        'SIN REGISTRO REQUERIDO • TU BILLETERA MANEJA LAS TRANSACCIONES': 'NO SIGN-UP REQUIRED • WALLET HANDLES TRANSACTIONS',
         
         // Properties Page
         'PROPIEDADES DE INVERSI\u00d3N': 'INVESTMENT PROPERTIES',
@@ -50,7 +50,7 @@ const translations = {
         'POR QU\u00c9 IMPORTA EL RGP PARA PROPI': 'WHY RGP MATTERS FOR PROPI',
         'PONTE EN CONTACTO': 'GET IN TOUCH',
         '\u00bfListo para tokenizar tu propiedad o comenzar a invertir? Con\u00e9ctate con nuestro equipo.': 'Ready to tokenize your property or start investing? Connect with our team.',
-        'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022  ': 'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022  ',
+        'SIN REGISTRO REQUERIDO • TU BILLETERA MANEJA LAS TRANSACCIONES': 'NO SIGN-UP REQUIRED • WALLET HANDLES TRANSACTIONS',
         
         // How It Works Page
         'C\u00f3mo Funciona Propi': 'How Propi Works',
@@ -108,7 +108,7 @@ const translations = {
         'READY TO GET STARTED?': '\u00bfLISTO PARA COMENZAR?',
         'Connect your wallet and start investing in Guatemala real estate or tokenize your property.': 'Conecta tu billetera y comienza a invertir en bienes ra\u00edces de Guatemala o tokeniza tu propiedad.',
         'LEARN MORE': 'APRENDER M\u00c1S',
-        'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022  ': 'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022  ',
+        'NO SIGN-UP REQUIRED • WALLET HANDLES TRANSACTIONS': 'SIN REGISTRO REQUERIDO • TU BILLETERA MANEJA LAS TRANSACCIONES',
         
         // Properties Page
         'INVESTMENT PROPERTIES': 'PROPIEDADES DE INVERSI\u00d3N',
