@@ -1,11 +1,10 @@
 # Propi - Guatemala Property Tokenization Platform
 
-The first compliant property tokenization platform for Guatemala. Invest in real estate from $500 or tokenize your property.
+Tokenize your properties in Guatemala, staying compliant with Registro de la Propiedad.
 
 ## Features
 
 - 🏠 **Property Tokenization**: Transform real estate into tradeable digital tokens
-- 💰 **Low Investment Minimum**: Start investing from just $500
 - 🔒 **RGP Compliant**: Fully compliant with Guatemala's property registry
 - 🌐 **Bilingual**: Full English/Spanish support
 - 📱 **Wallet Integration**: MetaMask wallet connection

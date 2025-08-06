@@ -15,10 +15,10 @@ const translations = {
         // Homepage
         'TU PROPIEDAD,': 'YOUR PROPERTY,',
         'TU TOKEN': 'YOUR TOKEN',
-        'La primera plataforma de tokenización de propiedades conforme para Guatemala. Invierte en bienes raíces desde $500 o tokeniza tu propiedad.': 'The first compliant property tokenization platform for Guatemala. Invest in real estate from $500 or tokenize your property.',
+        'La primera plataforma de tokenización de propiedades conforme para Guatemala. Invierte en bienes raíces   o tokeniza tu propiedad.': 'The first compliant property tokenization platform for Guatemala. Invest in real estate from  or tokenize your property.',
         'EXPLORAR PROPIEDADES': 'BROWSE PROPERTIES',
         'TOKENIZAR PROPIEDAD': 'TOKENIZE PROPERTY',
-        'INVERSIÓN MÍNIMA': 'MINIMUM INVESTMENT',
+        'INVERSIÓN MÍNIMA': '',
         'PROPIEDADES DESTACADAS': 'FEATURED PROPERTIES',
         'Propiedades reales de Guatemala en las que puedes invertir hoy': 'Real Guatemala properties you can invest in today',
         'C\u00d3MO FUNCIONA': 'HOW IT WORKS',
@@ -33,11 +33,11 @@ const translations = {
         'Conecta tu billetera y comienza a invertir en bienes ra\u00edces de Guatemala o tokeniza tu propiedad.': 'Connect your wallet and start investing in Guatemala real estate or tokenize your property.',
         'CONECTAR BILLETERA / CONECTAR BILLETERA': 'CONNECT WALLET',
         'APRENDER M\u00c1S': 'LEARN MORE',
-        'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022 COMIENZA CON $500': 'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022 START WITH $500',
+        'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022  ': 'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022  ',
         
         // Properties Page
         'PROPIEDADES DE INVERSI\u00d3N': 'INVESTMENT PROPERTIES',
-        'Invierte en bienes ra\u00edces de Guatemala desde $500. Todas las propiedades est\u00e1n verificadas y son legalmente conformes.': 'Invest in Guatemala real estate starting from $500. All properties are verified and legally compliant.',
+        'Invierte en bienes ra\u00edces de Guatemala  . Todas las propiedades est\u00e1n verificadas y son legalmente conformes.': 'Invest in Guatemala real estate  . All properties are verified and legally compliant.',
         'TODAS': 'ALL',
         'CARGAR M\u00c1S PROPIEDADES': 'LOAD MORE PROPERTIES',
         '\u00bfLISTO PARA INVERTIR?': 'READY TO INVEST?',
@@ -51,7 +51,7 @@ const translations = {
         'POR QU\u00c9 IMPORTA EL RGP PARA PROPI': 'WHY RGP MATTERS FOR PROPI',
         'PONTE EN CONTACTO': 'GET IN TOUCH',
         '\u00bfListo para tokenizar tu propiedad o comenzar a invertir? Con\u00e9ctate con nuestro equipo.': 'Ready to tokenize your property or start investing? Connect with our team.',
-        'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022 COMIENZA CON $500': 'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022 START WITH $500',
+        'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022  ': 'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022  ',
         
         // How It Works Page
         'C\u00f3mo Funciona Propi': 'How Propi Works',
@@ -67,7 +67,7 @@ const translations = {
         'Gesti\u00f3n Continua': 'Ongoing Management',
         'Resultado: Bienes Ra\u00edces L\u00edquidos': 'Result: Liquid Real Estate',
         '\u00bfListo para Comenzar?': 'Ready to Start?',
-        'Sin registro requerido. Tu billetera patrocina las transacciones. Comienza con $500.': 'No sign-up required. Your wallet sponsors transactions. Start with $500.',
+        'Sin registro requerido. Tu billetera patrocina las transacciones. Comienza con .': 'No sign-up required. Your wallet sponsors transactions. Start with .',
         
         // Flow Chart Page
         'FLUJO DE PLATAFORMA': 'PLATFORM FLOW',
@@ -82,7 +82,7 @@ const translations = {
         '\u00bfLISTO PARA COMENZAR?': 'READY TO START?',
         'Conecta tu billetera para comenzar a invertir en bienes ra\u00edces de Guatemala o tokenizar tu propiedad.': 'Connect your wallet to start investing in Guatemala real estate or tokenize your property.',
         'VER PROPIEDADES': 'VIEW PROPERTIES',
-        'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022 COMIENZA CON $500': 'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022 START WITH $500'
+        'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022  ': 'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022  '
     },
     es: {
         // Navigation
@@ -94,10 +94,10 @@ const translations = {
         // Homepage
         'YOUR PROPERTY,': 'TU PROPIEDAD,',
         'YOUR TOKEN': 'TU TOKEN',
-        'The first compliant property tokenization platform for Guatemala. Invest in real estate from $500 or tokenize your property.': 'La primera plataforma de tokenización de propiedades conforme para Guatemala. Invierte en bienes raíces desde $500 o tokeniza tu propiedad.',
+        'The first compliant property tokenization platform for Guatemala. Invest in real estate from  or tokenize your property.': 'La primera plataforma de tokenización de propiedades conforme para Guatemala. Invierte en bienes raíces   o tokeniza tu propiedad.',
         'BROWSE PROPERTIES': 'EXPLORAR PROPIEDADES',
         'TOKENIZE PROPERTY': 'TOKENIZAR PROPIEDAD',
-        'MINIMUM INVESTMENT': 'INVERSIÓN MÍNIMA',
+        '': 'INVERSIÓN MÍNIMA',
         'FEATURED PROPERTIES': 'PROPIEDADES DESTACADAS',
         'Real Guatemala properties you can invest in today': 'Propiedades reales de Guatemala en las que puedes invertir hoy',
         'Three simple steps to property tokenization': 'Tres pasos simples para la tokenizaci\u00f3n de propiedades',
@@ -110,11 +110,11 @@ const translations = {
         'READY TO GET STARTED?': '\u00bfLISTO PARA COMENZAR?',
         'Connect your wallet and start investing in Guatemala real estate or tokenize your property.': 'Conecta tu billetera y comienza a invertir en bienes ra\u00edces de Guatemala o tokeniza tu propiedad.',
         'LEARN MORE': 'APRENDER M\u00c1S',
-        'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022 START WITH $500': 'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022 COMIENZA CON $500',
+        'NO SIGN-UP REQUIRED \u2022 YOUR WALLET SPONSORS TRANSACTIONS \u2022  ': 'SIN REGISTRO REQUERIDO \u2022 TU BILLETERA PATROCINA LAS TRANSACCIONES \u2022  ',
         
         // Properties Page
         'INVESTMENT PROPERTIES': 'PROPIEDADES DE INVERSI\u00d3N',
-        'Invest in Guatemala real estate starting from $500. All properties are verified and legally compliant.': 'Invierte en bienes ra\u00edces de Guatemala desde $500. Todas las propiedades est\u00e1n verificadas y son legalmente conformes.',
+        'Invest in Guatemala real estate  . All properties are verified and legally compliant.': 'Invierte en bienes ra\u00edces de Guatemala  . Todas las propiedades est\u00e1n verificadas y son legalmente conformes.',
         'ALL': 'TODAS',
         'LOAD MORE PROPERTIES': 'CARGAR M\u00c1S PROPIEDADES',
         'READY TO INVEST?': '\u00bfLISTO PARA INVERTIR?',
@@ -143,7 +143,7 @@ const translations = {
         'Ongoing Management': 'Gesti\u00f3n Continua',
         'Result: Liquid Real Estate': 'Resultado: Bienes Ra\u00edces L\u00edquidos',
         'Ready to Start?': '\u00bfListo para Comenzar?',
-        'No sign-up required. Your wallet sponsors transactions. Start with $500.': 'Sin registro requerido. Tu billetera patrocina las transacciones. Comienza con $500.',
+        'No sign-up required. Your wallet sponsors transactions. Start with .': 'Sin registro requerido. Tu billetera patrocina las transacciones. Comienza con .',
         
         // Flow Chart Page
         'PLATFORM FLOW': 'FLUJO DE PLATAFORMA',
