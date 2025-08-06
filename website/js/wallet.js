@@ -15,10 +15,9 @@ const translations = {
         // Homepage
         'TU PROPIEDAD,': 'YOUR PROPERTY,',
         'TU TOKEN': 'YOUR TOKEN',
-        'La primera plataforma de tokenización de propiedades conforme para Guatemala. Invierte en bienes raíces   o tokeniza tu propiedad.': 'The first compliant property tokenization platform for Guatemala. Invest in real estate from  or tokenize your property.',
+        'Tokeniza propiedades en Guatemala con cumplimiento RGP.': 'Tokenize properties in Guatemala with RGP compliance.',
         'EXPLORAR PROPIEDADES': 'BROWSE PROPERTIES',
         'TOKENIZAR PROPIEDAD': 'TOKENIZE PROPERTY',
-        'INVERSIÓN MÍNIMA': '',
         'PROPIEDADES DESTACADAS': 'FEATURED PROPERTIES',
         'Propiedades reales de Guatemala en las que puedes invertir hoy': 'Real Guatemala properties you can invest in today',
         'C\u00d3MO FUNCIONA': 'HOW IT WORKS',
@@ -94,10 +93,9 @@ const translations = {
         // Homepage
         'YOUR PROPERTY,': 'TU PROPIEDAD,',
         'YOUR TOKEN': 'TU TOKEN',
-        'The first compliant property tokenization platform for Guatemala. Invest in real estate from  or tokenize your property.': 'La primera plataforma de tokenización de propiedades conforme para Guatemala. Invierte en bienes raíces   o tokeniza tu propiedad.',
+        'Tokenize properties in Guatemala with RGP compliance.': 'Tokeniza propiedades en Guatemala con cumplimiento RGP.',
         'BROWSE PROPERTIES': 'EXPLORAR PROPIEDADES',
         'TOKENIZE PROPERTY': 'TOKENIZAR PROPIEDAD',
-        '': 'INVERSIÓN MÍNIMA',
         'FEATURED PROPERTIES': 'PROPIEDADES DESTACADAS',
         'Real Guatemala properties you can invest in today': 'Propiedades reales de Guatemala en las que puedes invertir hoy',
         'Three simple steps to property tokenization': 'Tres pasos simples para la tokenizaci\u00f3n de propiedades',
