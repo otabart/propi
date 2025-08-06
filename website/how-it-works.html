@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Propius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #1f2937 0%, #374151 100%); }
+        .flow-arrow::after {
+            content: '↓';
+            font-size: 1.5rem;
+            color: #6b7280;
+            display: block;
+            text-align: center;
+            margin: 16px 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">P</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Propius</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-gray-900">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-gray-900">About</a>
+                    <a href="properties.html" class="text-gray-600 hover:text-gray-900">Properties</a>
+                    <a href="how-it-works.html" class="text-gray-900 font-medium">How It Works</a>
+                </div>
+                <button class="px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 text-sm font-medium">Connect Wallet</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="gradient-bg text-white py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold mb-4">How Propius Works</h1>
+            <p class="text-xl text-gray-300">From property deed to blockchain token in 6 simple steps</p>
+        </div>
+    </section>
+
+    <!-- Flow Steps -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            
+            <!-- Step 1 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-lg font-bold text-gray-600">1</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Upload Property Documents</h3>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Required Documents</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Título de Propiedad (Property Title)</li>
+                                    <li>• RGP Certification</li>
+                                    <li>• Property photos</li>
+                                    <li>• Municipal permits</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">What Happens</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Documents stored on Arweave (permanent)</li>
+                                    <li>• Property data extracted automatically</li>
+                                    <li>• Unique property ID generated</li>
+                                    <li>• Document integrity verified</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>Result:</strong> Your documents get a permanent Arweave URL and SHA-256 hash for verification.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow"></div>
+
+            <!-- Step 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-lg font-bold text-gray-600">2</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Notary Verification</h3>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Verification Process</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Document authenticity check</li>
+                                    <li>• RGP registry cross-reference</li>
+                                    <li>• Ownership confirmation</li>
+                                    <li>• Legal compliance review</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">Digital Signature</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Notary signs with digital certificate</li>
+                                    <li>• Signature stored on blockchain</li>
+                                    <li>• Timestamp recorded permanently</li>
+                                    <li>• Property marked as verified</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>Result:</strong> Property is marked as VERIFIED and ready for tokenization.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow"></div>
+
+            <!-- Step 3 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-lg font-bold text-gray-600">3</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Choose Tokenization Type</h3>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="border border-gray-200 rounded-lg p-4">
+                                <h4 class="font-semibold text-gray-800 mb-3">Whole Property NFT</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm mb-3">
+                                    <li>• Single NFT = Complete ownership</li>
+                                    <li>• Traditional sale to one buyer</li>
+                                    <li>• No fractionalization</li>
+                                    <li>• Best for high-value properties</li>
+                                </ul>
+                                <div class="bg-gray-50 p-2 rounded text-xs text-gray-600">
+                                    <strong>Example:</strong> $450K house → 1 NFT
+                                </div>
+                            </div>
+                            <div class="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                                <h4 class="font-semibold text-gray-800 mb-3">Fractional Shares</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm mb-3">
+                                    <li>• Property split into shares</li>
+                                    <li>• Multiple investors participate</li>
+                                    <li>• Lower investment minimums</li>
+                                    <li>• Revenue sharing enabled</li>
+                                </ul>
+                                <div class="bg-white p-2 rounded text-xs text-gray-600">
+                                    <strong>Example:</strong> $75K house → 300 shares @ $250 each
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>Your Choice:</strong> Set total shares, price per share, and minimum investment amount.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow"></div>
+
+            <!-- Step 4 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-lg font-bold text-gray-600">4</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Smart Contract Deployment</h3>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">PropertyRegistry Contract</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Mints Property NFT to your wallet</li>
+                                    <li>• Links to Arweave document storage</li>
+                                    <li>• Records property details on-chain</li>
+                                    <li>• Enables secure transfers</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">FractionalProperty Contract</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Creates fractional shares (if chosen)</li>
+                                    <li>• Sets investment parameters</li>
+                                    <li>• Enables revenue distribution</li>
+                                    <li>• Manages investor registry</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>Result:</strong> Your property is now tokenized on Base blockchain with ~$0.01 transaction costs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow"></div>
+
+            <!-- Step 5 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-lg font-bold text-gray-600">5</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Investment & KYC</h3>
+                        <div class="grid md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Tier 1: $500-$5K</h4>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• Basic ID verification</li>
+                                    <li>• Address confirmation</li>
+                                    <li>• Perfect for families</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Tier 2: $5K-$50K</h4>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• Enhanced KYC process</li>
+                                    <li>• Income verification</li>
+                                    <li>• Source of funds docs</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-gray-800 mb-2">Tier 3: $50K+</h4>
+                                <ul class="text-gray-600 text-sm space-y-1">
+                                    <li>• Accredited investor status</li>
+                                    <li>• Net worth documentation</li>
+                                    <li>• Professional verification</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>Process:</strong> KYC verification → USDC payment → Tokens to wallet → Revenue sharing begins.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-arrow"></div>
+
+            <!-- Step 6 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-8 mb-8">
+                <div class="flex items-start space-x-6">
+                    <div class="bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
+                        <span class="text-lg font-bold text-gray-600">6</span>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Ongoing Management</h3>
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">For Property Owners</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Automatic revenue distribution</li>
+                                    <li>• Property updates and photos</li>
+                                    <li>• Transfer approvals</li>
+                                    <li>• Performance analytics</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-3">For Investors</h4>
+                                <ul class="text-gray-600 space-y-1 text-sm">
+                                    <li>• Portfolio dashboard</li>
+                                    <li>• Income tracking</li>
+                                    <li>• Secondary trading</li>
+                                    <li>• Property reports</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <p class="text-sm text-gray-700">
+                                <strong>Automated:</strong> Monthly rental income and governance voting handled by smart contracts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Result -->
+            <div class="bg-gray-900 rounded-xl p-8 text-white text-center">
+                <h3 class="text-2xl font-bold mb-4">🎉 Result: Liquid Real Estate</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-2">Property Owners</h4>
+                        <p class="text-sm text-gray-300">Unlock liquidity, access global capital</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Investors</h4>
+                        <p class="text-sm text-gray-300">Low minimums, automated returns</p>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2">Guatemala</h4>
+                        <p class="text-sm text-gray-300">Foreign investment, modernized sector</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Start?</h2>
+            <h3 class="text-xl font-bold text-gray-600 mb-6">¿Listo para Comenzar?</h3>
+            <div class="flex justify-center space-x-4">
+                <button class="px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 font-medium">
+                    Connect Wallet
+                </button>
+                <a href="properties.html" class="px-8 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium">
+                    View Properties
+                </a>
+            </div>
+            <p class="text-sm text-gray-500 mt-4">
+                No sign-up required. Your wallet sponsors transactions. Start with $500.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-6 h-6 bg-gray-900 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xs">P</span>
+                    </div>
+                    <span class="font-semibold text-gray-900">Propius</span>
+                    <span class="text-gray-500 text-sm">© 2025</span>
+                </div>
+                <div class="flex space-x-6 text-sm text-gray-600">
+                    <a href="#" class="hover:text-gray-900">Terms</a>
+                    <a href="#" class="hover:text-gray-900">Privacy</a>
+                    <a href="#" class="hover:text-gray-900">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/wallet.js"></script>
+</body>
+</html>

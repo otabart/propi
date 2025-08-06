@@ -1,0 +1,60 @@
+{
+  "name": "propius",
+  "version": "1.0.0",
+  "description": "Guatemala Property Tokenization Platform",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:base-sepolia": "hardhat run scripts/deploy.js --network baseSepolia",
+    "node": "hardhat node",
+    "console": "hardhat console",
+    "verify": "hardhat verify",
+    "size": "hardhat size-contracts",
+    "clean": "hardhat clean",
+    "test:upload": "node scripts/upload-test-deed.js",
+    "test:tokenization": "node scripts/test-tokenization.js",
+    "demo:minting": "node scripts/demo-minting-flow.js"
+  },
+  "keywords": [
+    "blockchain",
+    "real-estate",
+    "tokenization",
+    "guatemala",
+    "base",
+    "ethereum"
+  ],
+  "author": "Propius Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.6",
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.10",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.5",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.14",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.30",
+    "chai": "^4.4.1",
+    "ethers": "^6.11.1",
+    "hardhat": "^2.22.2",
+    "hardhat-contract-sizer": "^2.10.0",
+    "hardhat-gas-reporter": "^1.0.10",
+    "solidity-coverage": "^0.8.11",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
+    "@irys/upload": "^0.0.13",
+    "@irys/upload-ethereum": "^0.0.5",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
+  }
+}

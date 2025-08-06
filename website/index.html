@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propius - Guatemala Property Tokenization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .gradient-bg { 
+            background: linear-gradient(180deg, #000000 0%, #111111 100%); 
+        }
+        .glass-effect { 
+            backdrop-filter: blur(20px); 
+            background: rgba(255, 255, 255, 0.02); 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .property-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .property-card:hover {
+            transform: translateY(-2px);
+        }
+        .metric-box {
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+        }
+        .progress-bar {
+            height: 2px;
+            background: #000000;
+        }
+    </style>
+</head>
+<body class="bg-white text-black">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-black flex items-center justify-center mr-3">
+                        <span class="text-white font-black text-sm">P</span>
+                    </div>
+                    <span class="text-2xl font-black text-black">PROPI</span>
+                </div>
+                <div class="hidden md:flex space-x-12">
+                    <a href="index.html" class="text-black font-semibold">HOME</a>
+                    <a href="about.html" class="text-gray-500 hover:text-black font-semibold">ABOUT</a>
+                    <a href="properties.html" class="text-gray-500 hover:text-black font-semibold">PROPERTIES</a>
+                    <a href="how-it-works.html" class="text-gray-500 hover:text-black font-semibold">HOW IT WORKS</a>
+                </div>
+                <button class="px-6 py-3 bg-black text-white font-bold hover:bg-gray-900 transition-colors">
+                    CONNECT WALLET
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-32">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-7xl font-black mb-8 tracking-tight">
+                TU PROPIEDAD,<br>
+                <span class="text-gray-400">TU TOKEN</span>
+            </h1>
+            <p class="text-xl mb-16 max-w-2xl mx-auto text-gray-300 font-light">
+                La primera plataforma de tokenización de propiedades conforme para Guatemala. Invierte en bienes raíces desde $500 o tokeniza tu propiedad.
+            </p>
+            
+            <div class="flex justify-center space-x-6 mb-24">
+                <button class="px-12 py-4 bg-white text-black font-bold hover:bg-gray-100 transition-colors">
+                    EXPLORAR PROPIEDADES
+                </button>
+                <button class="px-12 py-4 border border-gray-600 text-white font-bold hover:bg-white hover:text-black transition-colors">
+                    TOKENIZAR PROPIEDAD
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+                <div class="glass-effect p-8">
+                    <div class="text-4xl font-black mb-2">$500</div>
+                    <div class="text-sm text-gray-400 font-semibold tracking-wide">INVERSIÓN MÍNIMA</div>
+                </div>
+                <div class="glass-effect p-8">
+                    <div class="text-4xl font-black mb-2">RGP</div>
+                    <div class="text-sm text-gray-400 font-semibold tracking-wide">LEGALLY COMPLIANT</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-black text-black mb-4">FEATURED PROPERTIES</h2>
+                <h3 class="text-3xl font-black text-gray-600 mb-6">PROPIEDADES DESTACADAS</h3>
+                <p class="text-xl text-gray-600 font-light">Real Guatemala properties you can invest in today<br><span class="text-lg">Propiedades reales de Guatemala en las que puedes invertir hoy</span></p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Property 1 -->
+                <div class="property-card bg-white border border-gray-200 overflow-hidden">
+                    <div class="h-64 bg-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white mb-4 mx-auto flex items-center justify-center">
+                                <span class="text-2xl font-black">R</span>
+                            </div>
+                            <p class="text-white font-semibold tracking-wide">ZONE 15 RESIDENTIAL</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-xl font-bold text-black">FAMILY HOME, ZONE 15</h3>
+                            <span class="bg-black text-white px-3 py-1 text-xs font-bold tracking-wide">
+                                75% FUNDED
+                            </span>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">TOTAL VALUE</div>
+                                <div class="text-lg font-bold">$75,000</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">SHARE PRICE</div>
+                                <div class="text-lg font-bold">$250</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">MIN INVESTMENT</div>
+                                <div class="text-lg font-bold">$1,000</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">EST RETURN</div>
+                                <div class="text-lg font-bold">8.5%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2 font-semibold">
+                                <span>PROGRESS</span>
+                                <span>225/300 SHARES</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-0.5">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white py-4 font-bold hover:bg-gray-900 transition-colors">
+                            INVEST NOW
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card bg-white border border-gray-200 overflow-hidden">
+                    <div class="h-64 bg-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white mb-4 mx-auto flex items-center justify-center">
+                                <span class="text-2xl font-black">C</span>
+                            </div>
+                            <p class="text-white font-semibold tracking-wide">ZONE 10 COMMERCIAL</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-xl font-bold text-black">OFFICE BUILDING, ZONE 10</h3>
+                            <span class="bg-gray-200 text-black px-3 py-1 text-xs font-bold tracking-wide">
+                                NEW
+                            </span>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">TOTAL VALUE</div>
+                                <div class="text-lg font-bold">$2.5M</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">SHARE PRICE</div>
+                                <div class="text-lg font-bold">$250</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">MIN INVESTMENT</div>
+                                <div class="text-lg font-bold">$10,000</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">EST RETURN</div>
+                                <div class="text-lg font-bold">12.0%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2 font-semibold">
+                                <span>PROGRESS</span>
+                                <span>0/10,000 SHARES</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-0.5">
+                                <div class="progress-bar" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white py-4 font-bold hover:bg-gray-900 transition-colors">
+                            INVEST NOW
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card bg-white border border-gray-200 overflow-hidden">
+                    <div class="h-64 bg-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white mb-4 mx-auto flex items-center justify-center">
+                                <span class="text-2xl font-black">A</span>
+                            </div>
+                            <p class="text-white font-semibold tracking-wide">PETEN AGRICULTURAL</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-xl font-bold text-black">AGRICULTURAL LAND, PETEN</h3>
+                            <span class="bg-gray-400 text-white px-3 py-1 text-xs font-bold tracking-wide">
+                                40% FUNDED
+                            </span>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">TOTAL VALUE</div>
+                                <div class="text-lg font-bold">$125,000</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">SHARE PRICE</div>
+                                <div class="text-lg font-bold">$250</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">MIN INVESTMENT</div>
+                                <div class="text-lg font-bold">$500</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">EST RETURN</div>
+                                <div class="text-lg font-bold">6.8%</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2 font-semibold">
+                                <span>PROGRESS</span>
+                                <span>200/500 SHARES</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-0.5">
+                                <div class="progress-bar" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-black text-white py-4 font-bold hover:bg-gray-900 transition-colors">
+                            INVEST NOW
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="properties.html" class="inline-block px-8 py-4 border border-black text-black font-bold hover:bg-black hover:text-white transition-colors">
+                    VIEW ALL PROPERTIES →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl font-black text-black mb-6">HOW IT WORKS</h2>
+                <p class="text-xl text-gray-600 font-light">Three simple steps to property tokenization</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-black text-white flex items-center justify-center mx-auto mb-8">
+                        <span class="text-3xl font-black">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 text-black">UPLOAD DOCUMENTS</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        Upload property deed and documents. Verified by notaries, 
+                        stored permanently on blockchain.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-black text-white flex items-center justify-center mx-auto mb-8">
+                        <span class="text-3xl font-black">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 text-black">CHOOSE TYPE</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        Keep as single NFT or split into shares. 
+                        Set investment terms and revenue sharing.
+                    </p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-black text-white flex items-center justify-center mx-auto mb-8">
+                        <span class="text-3xl font-black">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 text-black">INVEST & EARN</h3>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        Tokens become tradeable. Rental income automatically 
+                        distributed to all holders.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="how-it-works.html" class="inline-block px-8 py-4 bg-black text-white font-bold hover:bg-gray-900 transition-colors">
+                    SEE DETAILED FLOW →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-black text-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-black mb-8">READY TO GET STARTED?</h2>
+            <p class="text-xl text-gray-300 mb-12 font-light max-w-3xl mx-auto">
+                Connect your wallet and start investing in Guatemala real estate or tokenize your property.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <button class="px-12 py-4 bg-white text-black font-black hover:bg-gray-100 transition-colors">
+                    CONNECT WALLET
+                </button>
+                <button class="px-12 py-4 border border-gray-600 text-white font-black hover:bg-white hover:text-black transition-colors">
+                    LEARN MORE
+                </button>
+            </div>
+            <p class="text-sm text-gray-400 mt-8 font-light">
+                NO SIGN-UP REQUIRED • YOUR WALLET SPONSORS TRANSACTIONS • START WITH $500
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-6 h-6 bg-black flex items-center justify-center mr-3">
+                        <span class="text-white font-black text-xs">P</span>
+                    </div>
+                    <span class="font-black text-black text-lg">PROPI</span>
+                    <span class="text-gray-500 text-sm ml-4">© 2025</span>
+                </div>
+                <div class="flex space-x-8 text-sm text-gray-600 font-semibold">
+                    <a href="#" class="hover:text-black">TERMS</a>
+                    <a href="#" class="hover:text-black">PRIVACY</a>
+                    <a href="#" class="hover:text-black">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/wallet.js"></script>
+</body>
+</html>

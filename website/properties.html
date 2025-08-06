@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - Propi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .gradient-bg { 
+            background: linear-gradient(180deg, #000000 0%, #111111 100%); 
+        }
+        .property-card {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .property-card:hover {
+            transform: translateY(-2px);
+        }
+        .metric-box {
+            border: 1px solid #e5e7eb;
+            background: #ffffff;
+        }
+        .progress-bar {
+            height: 2px;
+            background: #000000;
+        }
+    </style>
+</head>
+<body class="bg-white text-black">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center py-6">
+                <div class="flex items-center">
+                    <div class="w-8 h-8 bg-black flex items-center justify-center mr-3">
+                        <span class="text-white font-black text-sm">P</span>
+                    </div>
+                    <span class="text-2xl font-black text-black">PROPI</span>
+                </div>
+                <div class="hidden md:flex space-x-12">
+                    <a href="index.html" class="text-gray-500 hover:text-black font-semibold">HOME</a>
+                    <a href="about.html" class="text-gray-500 hover:text-black font-semibold">ABOUT</a>
+                    <a href="properties.html" class="text-black font-semibold">PROPERTIES</a>
+                    <a href="how-it-works.html" class="text-gray-500 hover:text-black font-semibold">HOW IT WORKS</a>
+                </div>
+                <button class="px-6 py-3 bg-black text-white font-bold hover:bg-gray-900 transition-colors">
+                    CONNECT WALLET
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="gradient-bg text-white py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-6xl font-black mb-6 tracking-tight">INVESTMENT PROPERTIES</h1>
+            <p class="text-xl text-gray-300 mb-12 font-light max-w-3xl">
+                Invest in Guatemala real estate starting from $500. All properties are verified and legally compliant.
+            </p>
+            
+            <!-- Filters -->
+            <div class="flex flex-wrap gap-4">
+                <button class="px-8 py-3 bg-white bg-opacity-20 font-bold tracking-wide border border-gray-600">ALL PROPERTIES</button>
+                <button class="px-8 py-3 text-gray-300 hover:bg-white hover:bg-opacity-10 font-bold tracking-wide border border-transparent hover:border-gray-600">RESIDENTIAL</button>
+                <button class="px-8 py-3 text-gray-300 hover:bg-white hover:bg-opacity-10 font-bold tracking-wide border border-transparent hover:border-gray-600">COMMERCIAL</button>
+                <button class="px-8 py-3 text-gray-300 hover:bg-white hover:bg-opacity-10 font-bold tracking-wide border border-transparent hover:border-gray-600">AGRICULTURAL</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div id="properties-grid" class="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+                <!-- Properties will be dynamically loaded here -->
+            </div>
+
+            <!-- Load More -->
+            <div class="text-center mt-16">
+                <button id="load-more-btn" class="px-12 py-4 border border-black text-black font-bold hover:bg-black hover:text-white transition-colors">
+                    LOAD MORE PROPERTIES / CARGAR MÁS PROPIEDADES
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-black text-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-black mb-8">READY TO INVEST?</h2>
+            <p class="text-xl text-gray-300 mb-12 font-light max-w-3xl mx-auto">
+                Connect your wallet to start investing in Guatemala real estate.
+            </p>
+            <button class="px-12 py-4 bg-white text-black font-black hover:bg-gray-100 transition-colors">
+                CONNECT WALLET / CONECTAR BILLETERA
+            </button>
+            <p class="text-sm text-gray-400 mt-6 font-light">
+                NO SIGN-UP REQUIRED • YOUR WALLET HANDLES ALL TRANSACTIONS<br>
+                SIN REGISTRO REQUERIDO • TU BILLETERA MANEJA TODAS LAS TRANSACCIONES
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-6 h-6 bg-black flex items-center justify-center mr-3">
+                        <span class="text-white font-black text-xs">P</span>
+                    </div>
+                    <span class="font-black text-black text-lg">PROPI</span>
+                    <span class="text-gray-500 text-sm ml-4">© 2025</span>
+                </div>
+                <div class="flex space-x-8 text-sm text-gray-600 font-semibold">
+                    <a href="#" class="hover:text-black">TERMS</a>
+                    <a href="#" class="hover:text-black">PRIVACY</a>
+                    <a href="#" class="hover:text-black">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/api.js"></script>
+    <script src="js/wallet.js"></script>
+</body>
+</html>
