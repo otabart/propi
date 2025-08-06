@@ -151,6 +151,125 @@
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
         });
+
+        // Load properties
+        let currentFilter = 'ALL';
+        let propertiesLoaded = 0;
+        const propertiesPerPage = 6;
+
+        async function loadProperties(append = false) {
+            const grid = document.getElementById('properties-grid');
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            
+            try {
+                const properties = await fetchProperties({
+                    type: currentFilter === 'ALL' ? null : currentFilter,
+                    limit: propertiesPerPage,
+                    offset: append ? propertiesLoaded : 0
+                });
+                
+                if (!append) {
+                    grid.innerHTML = '';
+                    propertiesLoaded = 0;
+                }
+                
+                if (properties.length === 0 && !append) {
+                    grid.innerHTML = `
+                        <div class="col-span-full text-center py-16">
+                            <h3 class="text-2xl font-black text-gray-400 mb-4 data-en='NO PROPERTIES YET' data-es='AÚN NO HAY PROPIEDADES'">AÚN NO HAY PROPIEDADES</h3>
+                            <p class="text-gray-600 data-en='Be the first to tokenize your property' data-es='Sé el primero en tokenizar tu propiedad'">Sé el primero en tokenizar tu propiedad</p>
+                        </div>
+                    `;
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    properties.forEach(property => {
+                        const card = createPropertyCard(property);
+                        grid.insertAdjacentHTML('beforeend', card);
+                    });
+                    
+                    propertiesLoaded += properties.length;
+                    loadMoreBtn.style.display = properties.length < propertiesPerPage ? 'none' : 'inline-block';
+                }
+            } catch (error) {
+                console.error('Error loading properties:', error);
+                if (!append) {
+                    grid.innerHTML = `
+                        <div class="col-span-full text-center py-16">
+                            <h3 class="text-2xl font-black text-gray-400 mb-4">ERROR LOADING PROPERTIES</h3>
+                            <p class="text-gray-600">Please check your connection and try again</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        function createPropertyCard(property) {
+            const status = getStatusBadge(property.status);
+            const showProgress = property.status === 'ACTIVE' || property.status === 'FUNDED';
+            
+            return `
+                <div class="property-card bg-white border border-gray-200 overflow-hidden">
+                    <div class="h-64 bg-gray-900 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-white mb-4 mx-auto flex items-center justify-center">
+                                <span class="text-2xl font-black">${property.image || property.type?.charAt(0) || 'P'}</span>
+                            </div>
+                            <p class="text-white font-semibold tracking-wide">${property.location || 'GUATEMALA'}</p>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-xl font-bold text-black">${property.title}</h3>
+                            ${property.status ? `<span class="${status.class} px-3 py-1 text-xs font-bold tracking-wide">${status.text}</span>` : ''}
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-8">
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">TOTAL VALUE</div>
+                                <div class="text-lg font-bold">${formatCurrency(property.totalValue)}</div>
+                            </div>
+                            <div class="metric-box p-4">
+                                <div class="text-xs text-gray-500 font-semibold mb-1">TYPE</div>
+                                <div class="text-lg font-bold">${property.type}</div>
+                            </div>
+                        </div>
+                        
+                        ${showProgress ? `
+                        <div class="mb-8">
+                            <div class="flex justify-between text-sm text-gray-600 mb-2 font-semibold">
+                                <span>PROGRESS</span>
+                                <span>${property.sharesSold || 0}/${property.totalShares || 0} SHARES</span>
+                            </div>
+                            <div class="w-full bg-gray-200 h-0.5">
+                                <div class="progress-bar" style="width: ${property.fundingProgress || 0}%"></div>
+                            </div>
+                        </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Filter buttons
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProperties();
+            
+            // Add click handlers to filter buttons
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentFilter = btn.dataset.filter;
+                    filterButtons.forEach(b => b.classList.remove('bg-white', 'bg-opacity-20'));
+                    btn.classList.add('bg-white', 'bg-opacity-20');
+                    loadProperties();
+                });
+            });
+            
+            // Load more button
+            document.getElementById('load-more-btn').addEventListener('click', () => {
+                loadProperties(true);
+            });
+        });
     </script>
 </body>
 </html>
