@@ -9,32 +9,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --guatemala-blue: #4A90E2;
+            --guatemala-navy: #2E5984;
+            --guatemala-light-blue: #5A9BD4;
+        }
         body { 
             font-family: 'Inter', sans-serif; 
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
         .gradient-bg { 
-            background: linear-gradient(180deg, #000000 0%, #111111 100%); 
+            background: linear-gradient(180deg, var(--guatemala-navy) 0%, #1a1a1a 100%); 
         }
         .glass-effect { 
             backdrop-filter: blur(20px); 
-            background: rgba(255, 255, 255, 0.02); 
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(74, 144, 226, 0.05); 
+            border: 1px solid rgba(74, 144, 226, 0.2);
         }
         .property-card {
             transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e5e7eb;
         }
         .property-card:hover {
             transform: translateY(-2px);
+            border-color: var(--guatemala-blue);
+            box-shadow: 0 8px 25px -8px rgba(74, 144, 226, 0.3);
         }
         .metric-box {
             border: 1px solid #e5e7eb;
             background: #ffffff;
+            transition: border-color 0.2s ease;
+        }
+        .metric-box:hover {
+            border-color: var(--guatemala-light-blue);
         }
         .progress-bar {
             height: 2px;
-            background: #000000;
+            background: var(--guatemala-blue);
+        }
+        .btn-primary {
+            background: var(--guatemala-blue);
+            color: white;
+        }
+        .btn-primary:hover {
+            background: var(--guatemala-navy);
+        }
+        .accent-blue {
+            color: var(--guatemala-blue);
         }
     </style>
 </head>
@@ -48,6 +70,7 @@
                         <span class="text-white font-black text-sm">P</span>
                     </div>
                     <span class="text-2xl font-black text-black">PROPI</span>
+                    <span class="text-xs bg-blue-600 text-white px-2 py-1 ml-2 font-bold">GT</span>
                 </div>
                 <div class="hidden md:flex space-x-12">
                     <a href="index.html" class="text-black font-semibold">HOME</a>

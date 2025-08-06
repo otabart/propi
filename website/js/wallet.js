@@ -1,5 +1,5 @@
 // Wallet Connection and Language Toggle
-let currentLanguage = localStorage.getItem('propi-language') || 'en';
+let currentLanguage = localStorage.getItem('propi-language') || 'es';
 let isWalletConnected = false;
 let walletAddress = null;
 
@@ -311,156 +311,271 @@ function updateWalletButtons(customText = null) {
 function showPropertyUploadFlow() {
     // Create modal for property tokenization
     const modal = document.createElement('div');
-    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-y-auto';
+    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 overflow-y-auto p-4';
     modal.innerHTML = `
-        <div class="bg-white p-12 max-w-5xl mx-4 my-8 border border-gray-200">
-            <h2 class="text-3xl font-black mb-4 text-black">TOKENIZE YOUR PROPERTY</h2>
-            <h3 class="text-xl font-black mb-8 text-gray-600">TOKENIZAR TU PROPIEDAD</h3>
-            <p class="text-gray-600 mb-8">Complete property details for Guatemala tokenization. All fields required for RGP compliance.</p>
+        <div class="bg-white max-w-4xl mx-auto my-8 shadow-2xl border border-gray-200 max-h-full overflow-y-auto">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8">
+                <h2 class="text-3xl font-black mb-2">TOKENIZAR TU PROPIEDAD</h2>
+                <h3 class="text-xl font-light opacity-90">TOKENIZE YOUR PROPERTY</h3>
+                <p class="text-blue-100 mt-4">Completa los detalles para tokenizar tu propiedad en Guatemala con cumplimiento RGP</p>
+            </div>
             
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Left Column: Basic Info -->
-                <div class="space-y-6">
-                    <h4 class="text-lg font-black text-black mb-4">BASIC INFORMATION</h4>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">PROPERTY TYPE / TIPO DE PROPIEDAD</label>
-                        <select id="propertyType" class="w-full p-4 border border-gray-200 text-black">
-                            <option value="">Select property type...</option>
-                            <option value="casa">Casa (House)</option>
-                            <option value="apartamento">Apartamento (Apartment)</option>
-                            <option value="edificio">Edificio (Building)</option>
-                            <option value="oficina">Oficina (Office)</option>
-                            <option value="bodega">Bodega (Warehouse)</option>
-                            <option value="local">Local Comercial (Commercial Space)</option>
-                            <option value="finca">Finca (Farm/Estate)</option>
-                            <option value="terreno">Terreno (Land)</option>
-                            <option value="industrial">Propiedad Industrial (Industrial Property)</option>
-                        </select>
+            <!-- Progress Indicator -->
+            <div class="bg-gray-50 p-4 border-b">
+                <div class="flex items-center justify-between text-sm">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                        <span class="font-semibold text-blue-600">Información Básica</span>
                     </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">GUATEMALA DEPARTMENT / DEPARTAMENTO</label>
-                        <select id="department" class="w-full p-4 border border-gray-200 text-black">
-                            <option value="">Select department...</option>
-                            <option value="guatemala">Guatemala</option>
-                            <option value="antigua">Sacatepéquez (Antigua)</option>
-                            <option value="chimaltenango">Chimaltenango</option>
-                            <option value="escuintla">Escuintla</option>
-                            <option value="peten">Petén</option>
-                            <option value="quetzaltenango">Quetzaltenango</option>
-                            <option value="huehuetenango">Huehuetenango</option>
-                            <option value="otros">Otros Departamentos</option>
-                        </select>
+                    <div class="text-gray-400">→</div>
+                    <div class="flex items-center space-x-2 text-gray-400">
+                        <div class="w-6 h-6 bg-gray-300 text-white rounded-full flex items-center justify-center">2</div>
+                        <span>Documentos</span>
                     </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">MUNICIPALITY / MUNICIPIO</label>
-                        <input type="text" id="municipality" class="w-full p-4 border border-gray-200 text-black" placeholder="e.g., Guatemala, Mixco, Villa Nueva">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">EXACT ADDRESS / DIRECCIÓN EXACTA</label>
-                        <textarea id="address" class="w-full p-4 border border-gray-200 text-black h-24" placeholder="Full street address including zone, colony, or neighborhood"></textarea>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">COORDINATES (Optional)</label>
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="text" id="latitude" class="w-full p-4 border border-gray-200 text-black" placeholder="Latitude">
-                            <input type="text" id="longitude" class="w-full p-4 border border-gray-200 text-black" placeholder="Longitude">
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Column: Property Details -->
-                <div class="space-y-6">
-                    <h4 class="text-lg font-black text-black mb-4">PROPERTY DETAILS</h4>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">TOTAL AREA (m²) / ÁREA TOTAL</label>
-                        <input type="number" id="totalArea" class="w-full p-4 border border-gray-200 text-black" placeholder="Square meters">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">CONSTRUCTION AREA (m²) / ÁREA CONSTRUIDA</label>
-                        <input type="number" id="constructionArea" class="w-full p-4 border border-gray-200 text-black" placeholder="Built square meters">
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-bold text-black mb-2">BEDROOMS / HABITACIONES</label>
-                            <input type="number" id="bedrooms" class="w-full p-4 border border-gray-200 text-black" placeholder="0">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-bold text-black mb-2">BATHROOMS / BAÑOS</label>
-                            <input type="number" id="bathrooms" class="w-full p-4 border border-gray-200 text-black" placeholder="0">
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">CONSTRUCTION YEAR / AÑO CONSTRUCCIÓN</label>
-                        <input type="number" id="constructionYear" class="w-full p-4 border border-gray-200 text-black" placeholder="2020">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">ESTIMATED VALUE (USD) / VALOR ESTIMADO</label>
-                        <input type="number" id="estimatedValue" class="w-full p-4 border border-gray-200 text-black" placeholder="75000">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">MONTHLY RENTAL INCOME (USD) / INGRESO MENSUAL ALQUILER</label>
-                        <input type="number" id="monthlyRent" class="w-full p-4 border border-gray-200 text-black" placeholder="500">
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">PROPERTY CONDITION / CONDICIÓN</label>
-                        <select id="condition" class="w-full p-4 border border-gray-200 text-black">
-                            <option value="excellent">Excelente (Excellent)</option>
-                            <option value="good">Buena (Good)</option>
-                            <option value="fair">Regular (Fair)</option>
-                            <option value="needs_work">Necesita Trabajo (Needs Work)</option>
-                            <option value="new_construction">Nueva Construcción (New Construction)</option>
-                        </select>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">TOKENIZATION TYPE / TIPO TOKENIZACIÓN</label>
-                        <select id="tokenizationType" class="w-full p-4 border border-gray-200 text-black">
-                            <option value="fractional">Fractional Shares (Multiple Investors)</option>
-                            <option value="whole">Whole Property NFT (Single Buyer)</option>
-                        </select>
+                    <div class="text-gray-400">→</div>
+                    <div class="flex items-center space-x-2 text-gray-400">
+                        <div class="w-6 h-6 bg-gray-300 text-white rounded-full flex items-center justify-center">3</div>
+                        <span>Verificación</span>
                     </div>
                 </div>
             </div>
-            
-            <!-- RGP Information -->
-            <div class="mt-8 p-6 bg-gray-50 border border-gray-200">
-                <h4 class="text-lg font-black text-black mb-4">RGP INFORMATION (If Available)</h4>
-                <div class="grid lg:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">RGP FINCA NUMBER / NÚMERO DE FINCA</label>
-                        <input type="text" id="rgpFinca" class="w-full p-4 border border-gray-200 text-black" placeholder="Optional">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-bold text-black mb-2">RGP FOLIO NUMBER / NÚMERO DE FOLIO</label>
-                        <input type="text" id="rgpFolio" class="w-full p-4 border border-gray-200 text-black" placeholder="Optional">
+
+            <div class="p-8">
+                <!-- Section 1: Información de Ubicación (Expandable) -->
+                <div class="mb-6 border border-gray-200 rounded-lg">
+                    <button type="button" class="w-full p-4 bg-gray-50 hover:bg-blue-50 flex justify-between items-center transition-colors" onclick="toggleSection('location-section')">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                                📍
+                            </div>
+                            <div class="text-left">
+                                <h4 class="text-lg font-bold text-gray-900">Información de Ubicación</h4>
+                                <p class="text-sm text-gray-600">Departamento, municipio y dirección exacta</p>
+                            </div>
+                        </div>
+                        <div class="transform transition-transform" id="location-arrow">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <div id="location-section" class="hidden p-6 space-y-4 bg-white">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">TIPO DE PROPIEDAD *</label>
+                                <select id="propertyType" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors">
+                                    <option value="">Selecciona el tipo...</option>
+                                    <option value="casa">Casa (House)</option>
+                                    <option value="apartamento">Apartamento (Apartment)</option>
+                                    <option value="edificio">Edificio (Building)</option>
+                                    <option value="oficina">Oficina (Office)</option>
+                                    <option value="bodega">Bodega (Warehouse)</option>
+                                    <option value="local">Local Comercial (Commercial Space)</option>
+                                    <option value="finca">Finca (Farm/Estate)</option>
+                                    <option value="terreno">Terreno (Land)</option>
+                                    <option value="industrial">Propiedad Industrial (Industrial Property)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">DEPARTAMENTO DE GUATEMALA *</label>
+                                <select id="department" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors">
+                                    <option value="">Selecciona departamento...</option>
+                                    <option value="guatemala">Guatemala</option>
+                                    <option value="antigua">Sacatepéquez (Antigua)</option>
+                                    <option value="chimaltenango">Chimaltenango</option>
+                                    <option value="escuintla">Escuintla</option>
+                                    <option value="peten">Petén</option>
+                                    <option value="quetzaltenango">Quetzaltenango</option>
+                                    <option value="huehuetenango">Huehuetenango</option>
+                                    <option value="otros">Otros Departamentos</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-900 mb-2">MUNICIPIO *</label>
+                            <input type="text" id="municipality" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="ej: Guatemala, Mixco, Villa Nueva">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-900 mb-2">DIRECCIÓN EXACTA *</label>
+                            <textarea id="address" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors h-24" placeholder="Dirección completa incluyendo zona, colonia o barrio"></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-900 mb-2">COORDENADAS (Opcional)</label>
+                            <div class="grid grid-cols-2 gap-4">
+                                <input type="text" id="latitude" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="Latitud">
+                                <input type="text" id="longitude" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="Longitud">
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="flex justify-between mt-12">
-                <button onclick="closeModal()" class="px-8 py-4 border border-gray-400 text-gray-600 font-bold hover:bg-gray-50">
-                    CANCEL
-                </button>
-                <button onclick="startTokenization()" class="px-8 py-4 bg-black text-white font-bold hover:bg-gray-900">
-                    START TOKENIZATION PROCESS
-                </button>
+                <!-- Section 2: Detalles de la Propiedad (Expandable) -->
+                <div class="mb-6 border border-gray-200 rounded-lg">
+                    <button type="button" class="w-full p-4 bg-gray-50 hover:bg-blue-50 flex justify-between items-center transition-colors" onclick="toggleSection('details-section')">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                                🏠
+                            </div>
+                            <div class="text-left">
+                                <h4 class="text-lg font-bold text-gray-900">Detalles de la Propiedad</h4>
+                                <p class="text-sm text-gray-600">Área, habitaciones, año de construcción</p>
+                            </div>
+                        </div>
+                        <div class="transform transition-transform" id="details-arrow">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <div id="details-section" class="hidden p-6 space-y-4 bg-white">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">ÁREA TOTAL (m²) *</label>
+                                <input type="number" id="totalArea" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="Metros cuadrados">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">ÁREA CONSTRUIDA (m²) *</label>
+                                <input type="number" id="constructionArea" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="Metros cuadrados construidos">
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">HABITACIONES</label>
+                                <input type="number" id="bedrooms" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="0">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">BAÑOS</label>
+                                <input type="number" id="bathrooms" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="0">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">AÑO CONSTRUCCIÓN</label>
+                                <input type="number" id="constructionYear" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="2020">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-900 mb-2">CONDICIÓN DE LA PROPIEDAD</label>
+                            <select id="condition" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors">
+                                <option value="excellent">Excelente (Excellent)</option>
+                                <option value="good">Buena (Good)</option>
+                                <option value="fair">Regular (Fair)</option>
+                                <option value="needs_work">Necesita Trabajo (Needs Work)</option>
+                                <option value="new_construction">Nueva Construcción (New Construction)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Información Financiera (Expandable) -->
+                <div class="mb-6 border border-gray-200 rounded-lg">
+                    <button type="button" class="w-full p-4 bg-gray-50 hover:bg-blue-50 flex justify-between items-center transition-colors" onclick="toggleSection('financial-section')">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                                💰
+                            </div>
+                            <div class="text-left">
+                                <h4 class="text-lg font-bold text-gray-900">Información Financiera</h4>
+                                <p class="text-sm text-gray-600">Valor estimado, ingresos y tipo de tokenización</p>
+                            </div>
+                        </div>
+                        <div class="transform transition-transform" id="financial-arrow">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <div id="financial-section" class="hidden p-6 space-y-4 bg-white">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">VALOR ESTIMADO (USD) *</label>
+                                <input type="number" id="estimatedValue" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="75000">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">INGRESO MENSUAL ALQUILER (USD)</label>
+                                <input type="number" id="monthlyRent" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-900 mb-2">TIPO DE TOKENIZACIÓN *</label>
+                            <select id="tokenizationType" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors">
+                                <option value="fractional">Acciones Fraccionarias (Múltiples Inversionistas)</option>
+                                <option value="whole">NFT de Propiedad Completa (Un Solo Comprador)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 4: RGP Information (Expandable) -->
+                <div class="mb-8 border border-gray-200 rounded-lg">
+                    <button type="button" class="w-full p-4 bg-gray-50 hover:bg-blue-50 flex justify-between items-center transition-colors" onclick="toggleSection('rgp-section')">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                                📋
+                            </div>
+                            <div class="text-left">
+                                <h4 class="text-lg font-bold text-gray-900">Información RGP</h4>
+                                <p class="text-sm text-gray-600">Números de finca y folio (si están disponibles)</p>
+                            </div>
+                        </div>
+                        <div class="transform transition-transform" id="rgp-arrow">
+                            <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <div id="rgp-section" class="hidden p-6 space-y-4 bg-white">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">NÚMERO DE FINCA RGP</label>
+                                <input type="text" id="rgpFinca" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="Opcional">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-900 mb-2">NÚMERO DE FOLIO RGP</label>
+                                <input type="text" id="rgpFolio" class="w-full p-3 border-2 border-gray-200 rounded-lg focus:border-blue-600 focus:outline-none transition-colors" placeholder="Opcional">
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <p class="text-sm text-blue-800">
+                                <strong>Nota:</strong> Los números RGP se pueden obtener más tarde si no los tienes disponibles ahora.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-between gap-4 pt-6 border-t">
+                    <button onclick="closeModal()" class="px-8 py-3 border-2 border-gray-300 text-gray-700 font-bold hover:bg-gray-50 rounded-lg transition-colors">
+                        CANCELAR
+                    </button>
+                    <button onclick="startTokenization()" class="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold hover:from-blue-700 hover:to-blue-800 rounded-lg transition-colors shadow-lg">
+                        INICIAR PROCESO DE TOKENIZACIÓN
+                    </button>
+                </div>
             </div>
         </div>
     `;
     
     document.body.appendChild(modal);
+    
+    // Auto-expand first section
+    setTimeout(() => {
+        toggleSection('location-section');
+    }, 100);
+}
+
+// Toggle expandable sections
+function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const arrow = document.getElementById(sectionId.replace('-section', '-arrow'));
+    
+    if (section && arrow) {
+        section.classList.toggle('hidden');
+        
+        if (section.classList.contains('hidden')) {
+            arrow.classList.remove('rotate-180');
+        } else {
+            arrow.classList.add('rotate-180');
+        }
+    }
 }
 
 // Close modal
